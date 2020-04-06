@@ -23,8 +23,7 @@ public class AccountService implements UserDetailsService {
 		if (userInfo == null) {
 			throw new UsernameNotFoundException("");
 		}
-//		String str = new BCryptPasswordEncoder().encode(userInfo.getPassword());
-//		System.out.println(str);
 		return userInfo;
 	}
+
 }

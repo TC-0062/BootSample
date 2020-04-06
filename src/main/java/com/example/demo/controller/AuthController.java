@@ -15,13 +15,11 @@ public class AuthController {
 
 	@RequestMapping("/")
 	public String index() {
-		System.out.println(">>>>>200406 redirect top");
 		return "redirect:/top";
 	}
 
 	@RequestMapping(value = "/login")
 	public String login() {
-		System.out.println(">>>>>200406 method login");
 		return "login";
 	}
 
@@ -30,7 +28,6 @@ public class AuthController {
 
 	@RequestMapping(value = "/top", method = RequestMethod.GET)
 	public void getLoginUser(ModelMap model) {
-		System.out.println(">>>>>200406 method getLoginUser");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		model.addAttribute("loginUser", accRepo.findByUsername(auth.getName()));
 	}
