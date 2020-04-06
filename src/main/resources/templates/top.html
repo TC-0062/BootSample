@@ -9,13 +9,17 @@
 	<h2>こんにちは</h2>
 	<div th:fragment="logout" sec:authorize="isAuthenticated()">
 		<p>
-			こんにちは: <span sec:authentication="name"></span>さん
+			<!-- こんにちは: <span sec:authentication="name"></span>さん-->
+			<!-- こんにちは: <span th:text="${username}"></span>さん -->
+			こんにちは: <span th:text="${loginUser.username}"></span>さん
 		</p>
 		<p>
-			mail: <span sec:authentication="principal.email"></span>
+			<!--mail: <span sec:authentication="principal.email"></span>  -->
+			mail: <span th:text="${loginUser.email}"></span>
 		</p>
 		<p>
-			権限: <span sec:authentication="principal.authorities"></span>
+			<!--権限: <span sec:authentication="principal.authorities"></span>  -->
+			権限: <span th:text="${loginUser.authority}"></span>
 		</p>
 		<form action="#" th:action="@{/logout}" method="post">
 			<input type="submit" value="ログアウト" />
