@@ -28,6 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		System.out.println(">>>>>WebSecurityConfig#configure");
 		http.authorizeRequests()
 				.antMatchers("/", "/login")
 				.permitAll()
