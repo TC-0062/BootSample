@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>User Registration</title>
+
+</head>
+<body>
+	<h2>ユーザー登録画面</h2>
+	<form th:action="@{/user-registration}" method="post">
+		<div style="width: 160px;">
+			<label for="id">ユーザID：</label>
+		</div>
+		<input type="text" name="id" autofocus="autofocus" required/> <br />
+		<div style="width: 160px;">
+			<label for="username">ユーザ名：</label>
+		</div>
+		<input type="text" name="username" required/> <br />
+		<div style="width: 160px;">
+			<label for="password">パスワード：</label>
+		</div>
+		<input type="password" name="password" required/> <br />
+
+		<div style="width: 160px;">
+			<label for="authority">権限：</label>
+		</div>
+		<input type="radio" name="authority" value="ROLE_USER" required/>ROLE_USER
+		<input type="radio" name="authority" value="ROLE_ADMIN" required/>ROLE_ADMIN
+		<br />
+		<div style="width: 160px;">
+			<label for="email">メール：</label>
+		</div>
+		<input type="text" name="email" required/> <br />
+		<p>
+			<input type="submit" value="登録" />
+		</p>
+	</form>
+	<br>
+	<a th:href="@{'/top/'}">トップ画面へ戻る</a>
+
+
+</body>
+</html>

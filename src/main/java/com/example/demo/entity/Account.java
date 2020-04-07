@@ -28,6 +28,7 @@ public class Account implements UserDetails {
 	@Column(nullable = false, unique = true)
 	private Integer id;
 
+
 	@Column(nullable = false, unique = true)
 	private String username;
 
@@ -66,6 +67,13 @@ public class Account implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
